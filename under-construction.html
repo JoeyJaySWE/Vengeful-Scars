@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNDER CONSTRUCTION</title>
+    <link rel="stylesheet" href="assets/css/under-construction.css">
+    <script src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=' crossorigin='anonymous'></script>
+</head>
+<body>
+    <div class="wrapper">
+        <img id="anchor" src="img/blue-text.png" alt="Vengeful Scars with scars seperateing the words vertically"/>
+        <h2>Hangar 503</h2>
+    </div>
+
+        <img id="bg" src="img/joya.png" alt="Guard with Spear" />
+   
+    <figcaption>
+        <strong>Joya:</strong> <p>"Hold it there matey, this part of the ship is still under construction, that means off limit!<br>
+            Come on, I'll fly ya back!"</p><div class="break"></div>
+            <button>Board the shuttle back!</button>
+    </figcaption>
+   <script>
+
+        let imgWidth = $("#bg").width();
+        imgWidth += 4;
+        let imgMargin = $("#bg").offset().left;
+        imgMargin -= 8;
+        $("figcaption").css("width", imgWidth+"px");
+        $("figcaption").css("margin-left", imgMargin+"px");
+
+
+        $("button").click(function(){
+             history.back(2);
+        })
+        $("#anchor").click(function(){
+            window.location.href = "http://vengefulscars.joeyjaydigital.com"
+        })
+   </script>
+</body>
+</html>
