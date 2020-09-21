@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>HP Calculator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <style>
+    #wrapper{
+      width:750px;
+      margin: auto;
+    }
+    h1{
+      text-align: center;
+    }
+    h3{
+      text-align: center;
+    }
+    #addWeapon:hover{
+      cursor: pointer;
+    }
+    input, select{
+      border:2px solid grey;
+      border-radius: 5px;
+      padding:5px;
+      margin:5px;
+    }
+    input:focus, select:focus{
+      border-radius: 5px;
+    }
+    button{
+      border:2px solid black;
+      background-color:lightgrey;
+      border-radius: 7px;
+      padding:7px;
+    }
+    button:focus{
+      outline: none;
+    }
+    #generate{
+      margin-top:20px;
+    }
+    #fields{
+      width:310px;
+      margin: auto;
+    }
+    </style>
+    <div id="wrapper">
+      <h1>HP Caliculator</h1>
+      <h3>Fill in the fields below and get reomended HP for your opponent(s) during events</h3>
+      <div id="fields">
+      <input id="players" type="number" placeholder="How many heros?"/><br/>
+      <span id="weaponsSection">
+      <select  placeholder="Select weapon to be used">
+        <option value="9">Blaster- pistol/rifel</option>
+        <option value="12">Sniper rifel</option>
+        <option value="2">Knife</option>
+        <option value="4">Vibro Knife</option>
+        <option value="6">Vibrosword</option>
+        <option value="1">Unarmed</option>
+      </select></span><button id="addWeapon">+ Weapons</button><br/>
+      <input id="noEnemies" type="number" placeholder="Number of enemies"/><br/>
+      <input id="noRounds" type="number" placeholder="Number of rounds"/><br/>
+      <button id="generate">Generate</button>
+      <p>
+        Weapons avarge damge output per round is: <span id="dmgR"></span>
+      </p>
+	  <p>
+        Weapons avarge damge output is: <span id="dmg"></span>
+      </p>
+      <p>
+        Recomened HP per opponent is: <span id="hp"></span>
+      </p>
+      </div>
+    </div>
+  </body>
+  <script>
+    $("#addWeapon").click(function(){
+      $("#weaponsSection").append("<br/><select  placeholder='Select weapon to be used'><option value='9'>Blaster- pistol/rifel</option><option value='12'>Sniper rifel</option><option value='2'>Knife</option><option value='4'>Vibro Knife</option><option value='6'>Vibrosword</option><option value='1'>Unarmed</option></select></span>");
+    })
+
+    $("#generate").click(function(){
+      console.log("click generate");
+
+
+
+      var players = $("#players").val();
+      var weapons = 0;
+
+      //Gives all weapons an id.
+      $("select").each(function(index){
+        //$(this).attr("id", "Weapons"+index);
+        var number = parseInt($(this).val());
+        weapons = weapons+number;
+      })
+      var enemies = $("#noEnemies").val();
+      var rounds =  $("#noRounds").val();
+
+      console.log("players "+players);
+      console.log("weapons damge: "+weapons);
+      console.log("enemies "+enemies);
+      console.log("rounds "+rounds);
+
+      weapons = weapons/3;
+      weapons = weapons*2;
+      weapons = Math.ceil(weapons);
+      $("#dmgR").text(weapons);
+	  var dmg = weapons*rounds;
+	  $("#dmg").text(dmg);
+
+      var hpEach =  weapons/enemies;
+      hpEach = rounds*hpEach;
+      hpEach = Math.ceil(hpEach);
+
+      // console.log("Single round HP: "+hpEach);
+      //
+      // hpEach = hpEach*rounds;
+      //
+      // console.log("Multi Rounds HP: "+hpEach);
+
+      $("#hp").text(hpEach);
+
+    })
+  </script>
+</html>

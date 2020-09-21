@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="icon" type="image/png" href="img/favicon.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <link href="sheet-style.css" type="text/css" rel="stylesheet"/>
+    <meta charset="utf-8">
+    <title>Sheet Reader</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <style id="color">
+      input, textarea, select{
+          color: #00c7f8;
+      }
+    </style>
+    <div id="wrapper">
+      <div id="quick-menue">
+        <img src="http://via.placeholder.com/64x64">
+        <nav id="burger-menu">
+          <li><a href="#avatar">Avatar</a></li>
+          <li><a href="#basic-info">Basic Info</a></li>
+          <li><a href="#dex">Dexterity Skills</a></li>
+          <li><a href="#perc">Perception Skills</a></li>
+          <li><a href="#know">Knowledge Skills</a></li>
+          <li><a href="#str">Strength Skills</a></li>
+          <li><a href="#mech">Mechanical Skills</a></li>
+          <li><a href="#tech">Technological Skills</a></li>
+          <li><a href="#force">Force Skills</a></li>
+          <li><a href="#advantages">Advantages</a></li>
+          <li><a href="#disadvantages">Disadvantages</a></li>
+          <li><a href="#special-abillities">Special Abillities</a></li>
+          <li><a href="#misc">Points and Credits</a></li>
+          <li><a href="#wounds">Wounds</a></li>
+
+          <li><a href="#armor">Armor</a></li>
+          <li><a href="#weapons">Weapons</a></li>
+          <li><a href="#force-powers">Force & Powers</a></li>
+          <li><a href="#equipment">Equipment</a></li>
+          <li><a href="#personality">Personality</a></li>
+          <li><a href="#objectives">Objectives</a></li>
+          <li><a href="#contacts">Contacts</a></li>
+        </nav>
+      </div>
+      <span style="display:none;position:absolute;left:650px;">Change text color:<input type="color" id="textcolorpicker" value="#00c7f8" style="width:30px;"><button id="textcolor-reset" style="height:30px;">Reset</button></span>
+      <span style="display:none;position:absolute;">Change input color:<input type="color" id="inputcolorpicker" value="#00c7f8" style="width:30px;"><button id="inputcolor-reset" style="height:30px;">Reset</button></span>
+
+      <div class="paper">
+        <div class="top-right" id="avatar">
+          <img src="http://via.placeholder.com/450x320" id="avatar-img"/>
+          <button id="img-upload">Place URL</button>
+          <div id="dimmer">
+          </div>
+            <div id="img-popup">
+              <h1>Enter the URL to your avatar</h1><br/>
+              <input type="text" id="avatar-url" placeholder="https://imgur.com/YL2HtL3"><br/>
+              <span>(If you don't have an url, <a href="https://imgur.com/upload">try this site</a>.)</span><br/>
+              <button id="cancel-upload">Cancel</button><button id="upload">Upload</button>
+            </div>
+
+        </div>
+        <div class="top-left" id="basic-info">
+          <h1 class="sheet-title">character sheet</h1>
+          <img src="img/blue-text-cropped.png" style="width:auto;border-radius:0;" class="guild-logo" />
+          <div class="basic-info">
+              <strong>Character Name:</strong> <input type="text" id="char-name" placeholder="Jace D. Mace"/><br />
+              <strong>Type:</strong> <input type="text" id="char-type" placeholder="Pirate Forger"/><br />
+              <strong>Gender / Specie:</strong> <input type="text" id="char-gender" placeholder="Male"/>/<input type="text" id="char-race" placeholder="Human"/><br />
+                <strong>Age:</strong> <input type="text" id="char-age" placeholder="24"/> yo
+                <strong>&emsp;Height:</strong> <input type="text" id="char-height" placeholder="1.79"/>m
+                <strong>&emsp;Weight:</strong> <input type="text" id="char-weight" placeholder="65"/>Kg<br />
+              <strong>Physical Discription:</strong> <input type="text" id="char-physics" placeholder="Blue hair, wields a Xantha..."/><br />
+              <textarea placeholder="(Text is gonna jump here automatically once out of space.)" style="resize:none;" id="char-physics2" rows="2" cols="55"></textarea>
+
+          </div>
+
+        </div>
+        <div class="skills">
+          <!-- Left side column -->
+          <div class="skills-column">
+
+            <!-- Dexterity Skills -->
+            <div class="attribute" id="dex">
+              <h2 class="attribute">dexterity</h2><h2 class="attribute"><input type="text" class="dice" id="dex-dice" placeholder="D4" /></h2>
+              <div class="skill">
+                <input type="text" id="dskill1" placeholder="Acrobtatics" />
+                <input type="text" id="dskill2" placeholder="Acrobtatics" />
+                <input type="text" id="dskill3" placeholder="Acrobtatics" />
+                <input type="text" id="dskill4" placeholder="Acrobtatics" />
+                <input type="text" id="dskill5" placeholder="Acrobtatics" />
+                <input type="text" id="dskill6" placeholder="Acrobtatics" />
+                <input type="text" id="dskill7" placeholder="Acrobtatics" />
+                <input type="text" id="dskill8" placeholder="Acrobtatics" />
+                <input type="text" id="dskill9" placeholder="Acrobtatics" />
+                <input type="text" id="dskill10" placeholder="Acrobtatics" />
+                <input type="text" id="dskill11" placeholder="Acrobtatics" />
+              </div>
+              <div class="dice">
+                <input type="text" id="dskillD1" placeholder="D1" />
+                <input type="text" id="dskillD2" placeholder="D1" />
+                <input type="text" id="dskillD3" placeholder="D1" />
+                <input type="text" id="dskillD4" placeholder="D1" />
+                <input type="text" id="dskillD5" placeholder="D1" />
+                <input type="text" id="dskillD6" placeholder="D1" />
+                <input type="text" id="dskillD7" placeholder="D1" />
+                <input type="text" id="dskillD8" placeholder="D1" />
+                <input type="text" id="dskillD9" placeholder="D1" />
+                <input type="text" id="dskillD10" placeholder="D1" />
+                <input type="text" id="dskillD11" placeholder="D1" />
+              </div>
+            </div>
+            <!-- Knowledge Skills -->
+            <div class="attribute" id="know">
+              <h2 class="attribute">Knowledge</h2><h2 class="attribute"><input type="text" class="dice" id="know-dice" placeholder="D4" /></h2>
+              <div class="skill">
+                <input type="text" id="kskill1" placeholder="Streetwise" />
+                <input type="text" id="kskill2" placeholder="Streetwise" />
+                <input type="text" id="kskill3" placeholder="Streetwise" />
+                <input type="text" id="kskill4" placeholder="Streetwise" />
+                <input type="text" id="kskill5" placeholder="Streetwise" />
+                <input type="text" id="kskill6" placeholder="Streetwise" />
+                <input type="text" id="kskill7" placeholder="Streetwise" />
+                <input type="text" id="kskill8" placeholder="Streetwise" />
+                <input type="text" id="kskill9" placeholder="Streetwise" />
+                <input type="text" id="kskill10" placeholder="Streetwise" />
+                <input type="text" id="kskill11" placeholder="Streetwise" />
+              </div>
+              <div class="dice">
+                <input type="text" id="kskillD1" placeholder="D1" />
+                <input type="text" id="kskillD2" placeholder="D1" />
+                <input type="text" id="kskillD3" placeholder="D1" />
+                <input type="text" id="kskillD4" placeholder="D1" />
+                <input type="text" id="kskillD5" placeholder="D1" />
+                <input type="text" id="kskillD6" placeholder="D1" />
+                <input type="text" id="kskillD7" placeholder="D1" />
+                <input type="text" id="kskillD8" placeholder="D1" />
+                <input type="text" id="kskillD9" placeholder="D1" />
+                <input type="text" id="kskillD10" placeholder="D1" />
+                <input type="text" id="kskillD11" placeholder="D1" />
+              </div>
+            </div>
+            <!-- Mechanical Skills -->
+            <div class="attribute" id="mech">
+              <h2 class="attribute">Mechanical</h2><h2 class="attribute"><input type="text" class="dice" id="mech-dice" placeholder="D4" /></h2>
+              <div class="skill">
+                <input type="text" id="mskill1" placeholder="Speeder Piloting" />
+                <input type="text" id="mskill2" placeholder="Speeder Piloting" />
+                <input type="text" id="mskill3" placeholder="Speeder Piloting" />
+                <input type="text" id="mskill4" placeholder="Speeder Piloting" />
+                <input type="text" id="mskill5" placeholder="Speeder Piloting" />
+                <input type="text" id="mskill6" placeholder="Speeder Piloting" />
+                <input type="text" id="mskill7" placeholder="Speeder Piloting" />
+                <input type="text" id="mskill8" placeholder="Speeder Piloting" />
+                <input type="text" id="mskill9" placeholder="Speeder Piloting" />
+                <input type="text" id="mskill10" placeholder="Speeder Piloting" />
+                <input type="text" id="mskill11" placeholder="Speeder Piloting" />
+              </div>
+              <div class="dice">
+                <input type="text" id="mskillD1" placeholder="D1" />
+                <input type="text" id="mskillD2" placeholder="D1" />
+                <input type="text" id="mskillD3" placeholder="D1" />
+                <input type="text" id="mskillD4" placeholder="D1" />
+                <input type="text" id="mskillD5" placeholder="D1" />
+                <input type="text" id="mskillD6" placeholder="D1" />
+                <input type="text" id="mskillD7" placeholder="D1" />
+                <input type="text" id="mskillD8" placeholder="D1" />
+                <input type="text" id="mskillD9" placeholder="D1" />
+                <input type="text" id="mskillD10" placeholder="D1" />
+                <input type="text" id="mskillD11" placeholder="D1" />
+              </div>
+            </div>
+            <!-- Force Skills -->
+            <div class="attribute" id="force">
+              <h2 class="attribute">Force Atrributes</h2>
+              <div class="skill">
+                <strong>Control</strong><br/>
+                <strong>Sence</strong><br/>
+                <strong>Alter</strong><br/>
+              </div>
+              <div class="dice">
+                <input type="text" id="fskillD1" placeholder="D0" />
+                <input type="text" id="fskillD2" placeholder="D0" />
+                <input type="text" id="fskillD3" placeholder="D0" />
+              </div>
+            </div>
+          </div>
+          <!-- Right side column -->
+          <div class="skills-column">
+
+            <!-- Perception Skills -->
+            <div class="attribute" id="perc">
+              <h2 class="attribute">Perception</h2><h2 class="attribute"><input type="text" class="dice" id="perc-dice" placeholder="D4" /></h2>
+              <div class="skill">
+                <input type="text" id="pskill1" placeholder="Con" />
+                <input type="text" id="pskill2" placeholder="Con" />
+                <input type="text" id="pskill3" placeholder="Con" />
+                <input type="text" id="pskill4" placeholder="Con" />
+                <input type="text" id="pskill5" placeholder="Con" />
+                <input type="text" id="pskill6" placeholder="Con" />
+                <input type="text" id="pskill7" placeholder="Con" />
+                <input type="text" id="pskill8" placeholder="Con" />
+                <input type="text" id="pskill9" placeholder="Con" />
+                <input type="text" id="pskill10" placeholder="Con" />
+                <input type="text" id="pskill11" placeholder="Con" />
+              </div>
+              <div class="dice">
+                <input type="text" id="pskillD1" placeholder="D1" />
+                <input type="text" id="pskillD2" placeholder="D1" />
+                <input type="text" id="pskillD3" placeholder="D1" />
+                <input type="text" id="pskillD4" placeholder="D1" />
+                <input type="text" id="pskillD5" placeholder="D1" />
+                <input type="text" id="pskillD6" placeholder="D1" />
+                <input type="text" id="pskillD7" placeholder="D1" />
+                <input type="text" id="pskillD8" placeholder="D1" />
+                <input type="text" id="pskillD9" placeholder="D1" />
+                <input type="text" id="pskillD10" placeholder="D1" />
+                <input type="text" id="pskillD11" placeholder="D1" />
+              </div>
+            </div>
+            <!-- Strength Skills -->
+            <div class="attribute" id="str">
+              <h2 class="attribute">Strenght</h2><h2 class="attribute"><input type="text" class="dice" id="str-dice" placeholder="D4" /></h2>
+              <div class="skill">
+                <input type="text" id="sskill1" placeholder="Melee Combat" />
+                <input type="text" id="sskill2" placeholder="Melee Combat" />
+                <input type="text" id="sskill3" placeholder="Melee Combat" />
+                <input type="text" id="sskill4" placeholder="Melee Combat" />
+                <input type="text" id="sskill5" placeholder="Melee Combat" />
+                <input type="text" id="sskill6" placeholder="Melee Combat" />
+                <input type="text" id="sskill7" placeholder="Melee Combat" />
+                <input type="text" id="sskill8" placeholder="Melee Combat" />
+                <input type="text" id="sskill9" placeholder="Melee Combat" />
+                <input type="text" id="sskill10" placeholder="Melee Combat" />
+                <input type="text" id="sskill11" placeholder="Melee Combat" />
+              </div>
+              <div class="dice">
+                <input type="text" id="sskillD1" placeholder="D1" />
+                <input type="text" id="sskillD2" placeholder="D1" />
+                <input type="text" id="sskillD3" placeholder="D1" />
+                <input type="text" id="sskillD4" placeholder="D1" />
+                <input type="text" id="sskillD5" placeholder="D1" />
+                <input type="text" id="sskillD6" placeholder="D1" />
+                <input type="text" id="sskillD7" placeholder="D1" />
+                <input type="text" id="sskillD8" placeholder="D1" />
+                <input type="text" id="sskillD9" placeholder="D1" />
+                <input type="text" id="sskillD10" placeholder="D1" />
+                <input type="text" id="sskillD11" placeholder="D1" />
+              </div>
+            </div>
+            <!-- Technology Skills -->
+            <div class="attribute" id="tech">
+              <h2 class="attribute">Technology</h2><h2 class="attribute"><input type="text" class="dice" id="tech-dice" placeholder="D4" /></h2>
+              <div class="skill">
+                <input type="text" id="tskill1" placeholder="Equipment Repair" />
+                <input type="text" id="tskill2" placeholder="Equipment Repair" />
+                <input type="text" id="tskill3" placeholder="Equipment Repair" />
+                <input type="text" id="tskill4" placeholder="Equipment Repair" />
+                <input type="text" id="tskill5" placeholder="Equipment Repair" />
+                <input type="text" id="tskill6" placeholder="Equipment Repair" />
+                <input type="text" id="tskill7" placeholder="Equipment Repair" />
+                <input type="text" id="tskill8" placeholder="Equipment Repair" />
+                <input type="text" id="tskill9" placeholder="Equipment Repair" />
+                <input type="text" id="tskill10" placeholder="Equipment Repair" />
+                <input type="text" id="tskill11" placeholder="Equipment Repair" />
+                <input type="text" id="tskill12" placeholder="Equipment Repair" />
+                <input type="text" id="tskill13" placeholder="Equipment Repair" />
+                <input type="text" id="tskill14" placeholder="Equipment Repair" />
+                <input type="text" id="tskill15" placeholder="Equipment Repair" />
+                <input type="text" id="tskill16" placeholder="Equipment Repair" />
+              </div>
+              <div class="dice">
+                <input type="text" id="tskillD1" placeholder="D1" />
+                <input type="text" id="tskillD2" placeholder="D1" />
+                <input type="text" id="tskillD3" placeholder="D1" />
+                <input type="text" id="tskillD4" placeholder="D1" />
+                <input type="text" id="tskillD5" placeholder="D1" />
+                <input type="text" id="tskillD6" placeholder="D1" />
+                <input type="text" id="tskillD7" placeholder="D1" />
+                <input type="text" id="tskillD8" placeholder="D1" />
+                <input type="text" id="tskillD9" placeholder="D1" />
+                <input type="text" id="tskillD10" placeholder="D1" />
+                <input type="text" id="tskillD11" placeholder="D1" />
+                <input type="text" id="tskillD12" placeholder="D1" />
+                <input type="text" id="tskillD13" placeholder="D1" />
+                <input type="text" id="tskillD14" placeholder="D1" />
+                <input type="text" id="tskillD15" placeholder="D1" />
+                <input type="text" id="tskillD16" placeholder="D1" />
+
+              </div>
+            </div>
+
+          </div>
+
+
+        </div>
+
+        <div class="specials">
+          <h2>Advantages:</h2>
+          <textarea id="advantages" rows="8" placeholder="None..." cols="80"></textarea>
+          <h2>Disadvantages:</h2>
+          <textarea id="disadvantages" placeholder="None..." rows="8" cols="80"></textarea>
+          <h2>Spcecial Abilities:</h2>
+          <textarea id="spcecial-abilities" placeholder="Xantha Player" rows="8" cols="80"></textarea>
+          <div class="misc">
+            <strong>Move:</strong>&emsp;<input type="text" placeholder="10" id="char-speed" />&nbsp;m<br />
+            <strong>Force Sensitive:</strong>&emsp;<input type="checkbox" id="char-force" />&nbsp; I am a Forcie!<br />
+            <strong>Force Points:</strong>&emsp;<input type="text" placeholder="1" id="char-fp" />&nbsp;FP<br />
+            <strong>Character Points:</strong>&emsp;<input type="text" placeholder="5" id="char-cp" />&nbsp;CP<br />
+            <strong>Credits:</strong>&emsp;<input type="text" placeholder="10,000" id="char-credits" />&nbsp;Credits<br />
+          </div>
+          <h3>Wound Status</h3>
+          <div id="wounds">
+              <div class="wound-type">
+                <strong>Stunned</strong><br />
+                <strong>Wounded</strong><br />
+                <strong>Incapacitated</strong><br />
+                <strong>Mortally Wounded</strong><br />
+              </div>
+              <div class="wound-checks">
+                <input type="checkbox" /><br />
+                <input type="checkbox" /><input type="checkbox" /><br />
+                <input type="checkbox" /><br />
+                <input type="checkbox" /><br />
+              </div>
+          </div>
+        </div>
+      </div><br />
+      <!-- Sheet 2 -->
+      <div class="paper">
+          <div class="left-column">
+            <div class="top-left box" id="armor">
+              <h2>armor</h2>
+              <strong>Type</strong><br />
+              <input type="text" placeholder="Medium Battle Armor"/><br />
+              <strong>AV</strong><br />
+              <select>
+                <option value="ra">Readily avilable</option>
+                <option value="na">Normally avilable</option>
+                <option value="si">Specialized item</option>
+                <option value="ri">Rare item</option>
+              </select><br />
+              <strong>Notes</strong>
+                <textarea placeholder="Needs repair work" rows="2" cols="55"></textarea>
+            </div>
+
+            <div class="box" id="weapons">
+                <h2>weapons</h2>
+                <div id="weapons-list">
+                  <button id="add-weapon">+ Add weapon</button>
+                </div>
+            </div>
+            <div id="force-powers" class="box">
+              <h2>Froce powers & other information</h2>
+              <textarea placeholder="No idea what tyo type here..." rows="10" cols="55"></textarea>
+            </div>
+          </div>
+          <div class="top-right box" id="persona">
+            <h2>other Equipment</h2>
+            <span><strong>Type</strong><strong>Note</strong></span>
+            <textarea placeholder="Utility Belt - Contains 6 medpacks, liquid cable disp..." rows="10" cols="55"></textarea>
+            <strong>Personality:</strong>
+            <textarea placeholder="Utility Belt - Contains 6 medpacks, liquid cable disp..." rows="10" cols="55"></textarea>
+            <strong>Objectives:</strong>
+            <textarea placeholder="Utility Belt - Contains 6 medpacks, liquid cable disp..." rows="10" cols="55"></textarea>
+            <strong>Languages:</strong>
+            <textarea placeholder="Utility Belt - Contains 6 medpacks, liquid cable disp..." rows="10" cols="55"></textarea>
+            <strong>Contacts / Enemies:</strong>
+            <textarea placeholder="Utility Belt - Contains 6 medpacks, liquid cable disp..." rows="10" cols="55"></textarea>
+
+          </div>
+
+      </div>
+    </div>
+
+
+    <!-- Color change
+    <script>
+      console.log("Current input color is: #00c7f8");
+      console.log("Current text color is: #00c7f8");
+      console.log("Current border color is: #00c7f8");
+
+
+      $("#inputcolorpicker").change(function(){
+        let collor = $("#inputcolorpicker").val();
+        console.log("Current input color is: "+collor);
+        $("#color").append("input, textarea, select{color: "+collor+";}");
+      $("#inputcolor-reset").click(function(){
+        $("#color").append("input, textarea, select{color: #00c7f8;}");
+        $("#inputcolorpicker").val("#00c7f8");
+        console.log("Current input color is: #00c7f8");
+      })
+      })
+      $("#textcolorpicker").change(function(){
+        let collor = $("#textcolorpicker").val();
+        console.log("Current text color is: "+collor);
+        $("#color").append("*{color: "+collor+";}");
+      $("#textcolor-reset").click(function(){
+        $("#color").append("*{color: #00c7f8;}");
+        $("#textcolorpicker").val("#00c7f8");
+        console.log("Current text color is: #00c7f8");
+      })
+      })
+    </script>
+     Avatar -->
+    <script>
+      $("#img-upload").click(function(){
+        $("#img-popup").css("display", "flex");
+        $("#dimmer").css("display", "block");
+      })
+
+      // Abort
+      $("#cancel-upload").click(function(){
+        $("#img-popup").css("display", "none");
+        $("#dimmer").css("display", "none");
+      })
+      $("#dimmer").click(function(){
+        $("#img-popup").css("display", "none");
+        $("#dimmer").css("display", "none");
+      })
+
+      // Upload
+      $("#upload").click(function(){
+        let imgurl = $("#avatar-url").val();
+        $("#avatar-img").attr("src", imgurl);
+
+        $("#img-popup").css("display", "none");
+        $("#dimmer").css("display", "none");
+      })
+
+      // Debug
+      $("#avtar-url").change(function(){
+        console.log($("#avatar-url").val());
+      })
+    </script>
+    <!-- Auto update FP -->
+    <script>
+      $("#char-force").change(function(){
+        console.log("changed")
+        if($(this).prop("checked") == true){
+          $("#char-fp").val("2");
+          console.log("checked");
+        }
+        else{
+          $("#char-fp").val("1");
+          console.log("unchecked");
+        }
+      })
+    </script>
+    <!-- Add weapon -->
+    <script>
+
+      $("#add-weapon").click(function(){
+        console.log("Click");
+        let newWeapon =  "<div class='weapon'><span><strong>Type</strong><strong>Dmg.</strong><strong>Range: S/M/L</strong></span><span><input type='text' placeholder='Xantha'/><input type='text' placeholder='STR + 2D'/><input type='text' placeholder='melee'/></span></div>";
+
+        $("#add-weapon").before(newWeapon);
+        console.log("Added");
+      })
+    </script>
+    <!-- Fix image replacement on smaller screen -->
+    <script>
+      $(document).ready(function(){
+        if($(".sheet-title").css("display") == "none"){
+          console.log("test gone");
+          // $("#avatar").after($("#basic-info"));
+          // $("div.top-right").first().css("background-color", "red");
+          console.log("test moved");
+        }
+      })
+    </script>
+    <!-- Switch input box for physical discription -->
+    <script>
+    $('#char-physics').keypress(function(e) {
+      var tval = $('#char-physics').val(),
+          tlength = tval.length,
+          set = 27,
+          remain = parseInt(set - tlength);
+
+      if (remain <= 0 && e.which !== 0 && e.charCode !== 0) {
+          $("#char-physics2").focus();
+
+          // $('#char-physics').val((tval).substring(0, tlength - 1));
+          // return false;
+        }
+      })
+
+      // Allow to erase like normal
+      $("#char-physics2").keydown(function(e){
+
+        if(e.keyCode == 8 && !$("#char-physics2").val()){
+          $("#char-physics").focus();
+        }
+      })
+
+    </script>
+    <!-- save -->
+    <!-- <script>
+      var doc = new jsPDF();
+      var specialElementHandlers = {
+        '#editor': function (element, renderer) {
+            return true;
+        }
+      };
+
+      $('#cmd').click(function () {
+        doc.fromHTML($('#content').html(), 15, 15, {
+            'width': 170,
+                'elementHandlers': specialElementHandlers
+        });
+        doc.save('sample-file.pdf');
+      });
+    </script> -->
+  </body>
+</html>

@@ -1,0 +1,48 @@
+#wrapper{
+    width: 800px;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+#groupShares{
+    margin-left:auto;
+    margin-right:auto;
+    width:310px;
+}
+#groupShares input{
+    text-align: center;
+}
+.subHeading{
+    text-align: center;
+}
+strong{
+    margin-top:20px;
+    display: flex;
+}
+#sharesDistributed{
+    width:150px;
+}
+strong span{
+    margin-left: auto;
+}
+#settings{
+    margin-top:20px;
+}
+@media screen and (max-width:600px){
+    #wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        width:100%;
+    }
+    #groupShares, #sharesDistributed{
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #sharesDistributed strong{
+        width:200px;
+    }
+
+}

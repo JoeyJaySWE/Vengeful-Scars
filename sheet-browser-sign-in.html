@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="icon" type="image/png" href="img/favicon.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <link href="sheet-style.css" type="text/css" rel="stylesheet"/>
+    <meta charset="utf-8">
+    <title>Sheet Reader</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta name="google-signin-client_id" content="126135015836-6nk8hv2jp0a5ae7ub4khtkdlv4qbnvjh.apps.googleusercontent.com">
+  </head>
+  <body>
+    <!-- <style id="color">
+      input, textarea, select{
+          color: #00c7f8;
+      }
+    </style> -->
+    <div id="wrapper">
+      <div clss="sign-in-form">
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <a href="#" onclick="signOut();">Sign out</a>
+      </div>
+    </div>
+
+<!--
+    Change colors script
+    <script>
+      console.log("Current input color is: #00c7f8");
+      console.log("Current text color is: #00c7f8");
+      console.log("Current border color is: #00c7f8");
+
+
+      $("#inputcolorpicker").change(function(){
+        let collor = $("#inputcolorpicker").val();
+        console.log("Current input color is: "+collor);
+        $("#color").append("input, textarea, select{color: "+collor+";}");
+      $("#inputcolor-reset").click(function(){
+        $("#color").append("input, textarea, select{color: #00c7f8;}");
+        $("#inputcolorpicker").val("#00c7f8");
+        console.log("Current input color is: #00c7f8");
+      })
+      })
+      $("#textcolorpicker").change(function(){
+        let collor = $("#textcolorpicker").val();
+        console.log("Current text color is: "+collor);
+        $("#color").append("*{color: "+collor+";}");
+      $("#textcolor-reset").click(function(){
+        $("#color").append("*{color: #00c7f8;}");
+        $("#textcolorpicker").val("#00c7f8");
+        console.log("Current text color is: #00c7f8");
+      })
+      })
+    </script> -->
+    <script src="https://apis.google.com/js/platform.js" async defer>
+    console.log("test 0");
+    gapi.load('auth2', function() {
+      auth2 = gapi.auth2.init({
+        client_id: '126135015836-6nk8hv2jp0a5ae7ub4khtkdlv4qbnvjh.apps.googleusercontent.com',
+        fetch_basic_profile: false,
+        scope: 'profile'
+        console.log("test1");
+      });
+      console.log("test3");
+      // Sign the user in, and then retrieve their ID.
+      auth2.signIn().then(function() {
+        console.log("test2");
+        console.log("User ID: "+auth2.currentUser.get().getId());
+      });
+    });
+    console.log("test 4");
+    </script>
+    <!-- Avatar -->
+    <script>
+      $("#img-upload").click(function(){
+        $("#img-popup").css("display", "flex");
+        $("#dimmer").css("display", "block");
+      })
+
+      // Abort
+      $("#cancel-upload").click(function(){
+        $("#img-popup").css("display", "none");
+        $("#dimmer").css("display", "none");
+      })
+      $("#dimmer").click(function(){
+        $("#img-popup").css("display", "none");
+        $("#dimmer").css("display", "none");
+      })
+
+      // Upload
+      $("#upload").click(function(){
+        let imgurl = $("#avatar-url").val();
+        $("#avatar-img").attr("src", imgurl);
+
+        $("#img-popup").css("display", "none");
+        $("#dimmer").css("display", "none");
+      })
+
+      // Debug
+      $("#avtar-url").change(function(){
+        console.log($("#avatar-url").val());
+      })
+    </script>
+    <!-- Auto update FP -->
+    <script>
+      $("#char-force").change(function(){
+        console.log("changed")
+        if($(this).prop("checked") == true){
+          $("#char-fp").val("2");
+          console.log("checked");
+        }
+        else{
+          $("#char-fp").val("1");
+          console.log("unchecked");
+        }
+      })
+    </script>
+    <!-- Add weapon -->
+    <script>
+
+      $("#add-weapon").click(function(){
+        console.log("Click");
+        let newWeapon =  "<div class='weapon'><span><strong>Type</strong><strong>Dmg.</strong><strong>Range: S/M/L</strong></span><span><input type='text' placeholder='Xantha'/><input type='text' placeholder='STR + 2D'/><input type='text' placeholder='melee'/></span><span style='justify-content:flex-start;align-items:baseline;'><strong>Ammo:</strong><input type='number' placeholder='25'></span></div>";
+
+        $("#add-weapon").before(newWeapon);
+        console.log("Added");
+      })
+    </script>
+    <!--Google Sign-in  -->
+    <script>
+
+      <!-- Sign out -->
+      function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+          console.log('User signed out.');
+        });
+      }
+    </script>
+    <script>
+    $('#char-physics').keypress(function(e) {
+      var tval = $('#char-physics').val(),
+          tlength = tval.length,
+          set = 27,
+          remain = parseInt(set - tlength);
+
+      if (remain <= 0 && e.which !== 0 && e.charCode !== 0) {
+          $("#char-physics2").focus();
+
+          // $('#char-physics').val((tval).substring(0, tlength - 1));
+          // return false;
+        }
+      })
+
+      // Allow to erase like normal
+      $("#char-physics2").keydown(function(e){
+
+        if(e.keyCode == 8 && !$("#char-physics2").val()){
+          $("#char-physics").focus();
+        }
+      })
+
+    </script>
+    <!-- save -->
+    <!-- <script>
+      var doc = new jsPDF();
+      var specialElementHandlers = {
+        '#editor': function (element, renderer) {
+            return true;
+        }
+      };
+
+      $('#cmd').click(function () {
+        doc.fromHTML($('#content').html(), 15, 15, {
+            'width': 170,
+                'elementHandlers': specialElementHandlers
+        });
+        doc.save('sample-file.pdf');
+      });
+    </script> -->
+    <!-- Google sign in -->
+  </body>
+</html>

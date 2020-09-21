@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Booty Calc - Vengeful Scars</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <style>
+    #wrapper{
+      width:750px;
+      margin: auto;
+    }
+    h1{
+      text-align: center;
+    }
+    h3{
+      text-align: center;
+    }
+    #addWeapon:hover{
+      cursor: pointer;
+    }
+    input, select{
+      border:2px solid grey;
+      border-radius: 5px;
+      padding:5px;
+      margin:5px;
+    }
+    input:focus, select:focus{
+      border-radius: 5px;
+    }
+    button{
+      border:2px solid black;
+      background-color:lightgrey;
+      border-radius: 7px;
+      padding:7px;
+    }
+    button:focus{
+      outline: none;
+    }
+    #generate{
+      margin-top:20px;
+    }
+    #fields{
+      width:250px;
+      margin: auto;
+    }
+    </style>
+    <div id="wrapper">
+      <h1>Booty Calculator</h1>
+      <h3>Fill in the fields below matey and get each share per rank *</h3>
+      <div id="fields">
+      <input type="hidden" id="captain" value="1"/><br/>
+      <input type="number" id="deps" placeholder="No. of Dep. Heads"/><br/>
+      <input type="number" id="pirates" placeholder="No. of Pirates"/><br/>
+      <input type="number" id="news" placeholder="No. of New Bloods"/><br/>
+      <input id="loot" type="number" placeholder="Booty value"/><br/>
+      <input id="ship" type="number" placeholder="Procentage to Ship"/><br/>
+      <button id="generate">Generate</button>
+      <p>
+        Ammount to Captain: <span id="cpt"></span>
+      </p>
+      <p>
+        Ammount to Dep. Head: <span id="dep"></span>
+      </p>
+      <p>
+        Ammount to Pirate: <span id="pirate"></span>
+      </p>
+      <p>
+        Ammount to New Blood: <span id="new"></span>
+      </p>
+      <p>
+        Ammount to Ship Treasury: <span id="shipShare"></span>
+      </p>
+      </div>
+    </div>
+  </body>
+  <script>
+
+
+    $.fn.digits = function(){
+      return this.each(function(){
+          $(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") );
+      })
+    }
+
+
+    $("#generate").click(function(){
+      var treasury = $("#ship").val();
+      console.log(treasury+"%");
+      var crew = 100-treasury;
+      treasury = treasury/100;
+      console.log(crew+"%");
+      crew = crew/100;
+      console.log(crew);
+      var booty = $("#loot").val();
+      console.log(booty);
+      var shipBooty = Math.floor(booty*treasury);
+      shipBooty = numberWithCommas(shipBooty);
+      $("#shipShare").text(shipBooty+" credits");
+      booty = booty*crew;
+      var capt = parseInt($("#captain").val());
+      var deps = parseInt($("#deps").val());
+      var pirates = parseInt($("#pirates").val());
+      var news = parseInt($("#news").val());
+
+      function numberWithCommas(number) {
+          var parts = number.toString().split(".");
+          parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          return parts.join(".");
+      }
+
+      crew = capt+deps+pirates+news;
+      console.log("Total crew members: "+crew);
+
+      booty = booty/crew;
+      //Find out crew amount to know procentage share.
+      capt = 2;
+      var captBooty = Math.floor(booty*capt);
+      captBooty = numberWithCommas(captBooty);
+      $("#cpt").text(captBooty+" credits");
+      console.log("total dep sum: "+deps*1.5);
+      deps = 1.5;
+      var depsBooty = Math.floor(booty*deps);
+      depsBooty = numberWithCommas(depsBooty);
+      $("#dep").text(depsBooty+" credits");
+      pirates = 1;
+      var pirateBooty = Math.floor(booty*pirates);
+      pirateBooty = numberWithCommas(pirateBooty);
+      $("#pirate").text(pirateBooty+" credits");
+      news = 0.5;
+      var newsBooty = Math.floor(booty*news);
+      newsBooty = numberWithCommas(newsBooty);
+      $("#new").text(newsBooty+" credits");
+    })
+
+
+
+  </script>
+</html>
