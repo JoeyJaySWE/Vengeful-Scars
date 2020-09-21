@@ -19,7 +19,8 @@
                     the ship's Quartermaster. 
                 </span>
             </p><div class="break"></div>
-                <button>*Gulp* I think I'll retrace my steps...</button>
+                <button class="back">*Gulp* I think I'll retrace my steps...</button>
+                <button class="report">Kriff it! I wanna report it!</button>
 
     </div>
     
@@ -27,9 +28,19 @@
     <img id="bg" src="img/Zalanin.png" alt="Captain Thinking" />
     <img id="anchor" src="img/blue-text.png" alt="Vengeful Scars with scars seperateing the words vertically"/>
     <script>
-        $("button").click(function(){
+        $("button.back").click(function(){
              history.back(1);
         })
+        let btnWidth = $(".back").width();
+        $(".report").css("width", btnWidth+"px");
+        $("button.report").click(function(){
+            var email = 'bugreport@joeyjaydigital.com';
+            var subject = 'Missing Page';
+            var url = window.location.href;
+            var emailBody = 'I was trying to access the following site: '+url;
+            window.location = 'mailto:' + email + '?subject=' + subject + '&body=' +   emailBody;
+        })
+
     </script>
 </body>
 </html>

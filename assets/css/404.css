@@ -8,6 +8,7 @@
   }
 :root{
      --chiss:#00c7f8;
+     --scar:#ff4b4b;
 }
 
 *{
@@ -84,6 +85,16 @@ button{
 button:hover{
     cursor: pointer;
     background-color: var(--chiss);
+    color:black;
+}
+button.report{
+
+    color:var(--scar);
+    margin-top:10px;
+
+}
+button.report:hover{
+    background-color: var(--scar);
     color:black;
 }
 @media screen and (max-width:1086px){

@@ -21,9 +21,10 @@
             <button>Board the shuttle back!</button>
     </figcaption>
    <script>
-
+       $( document ).ready(function(){
         let imgWidth = $("#bg").width();
-        imgWidth += 4;
+        console.log(imgWidth);
+        imgWidth = imgWidth+4;
         let imgMargin = $("#bg").offset().left;
         imgMargin -= 8;
         $("figcaption").css("width", imgWidth+"px");
@@ -36,6 +37,8 @@
         $("#anchor").click(function(){
             window.location.href = "http://vengefulscars.joeyjaydigital.com"
         })
+       })
+       
    </script>
 </body>
 </html>
