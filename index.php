@@ -5,6 +5,7 @@
     $favicon = "img/favicon.png";
 
     require __DIR__ . "/assets/header.php";
+    require __DIR__ . "/assets/restrict-ip.php";
 
 ?>
 
