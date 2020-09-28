@@ -83,6 +83,7 @@ html body{
   font-size: 1.1vw;
   --scar: #ff4b4b;
   --chiss:#00c7f8;
+  --title-scar: #d60f0f;
 }
 p{
 	margin-top:30px;
@@ -143,6 +144,37 @@ img.anchor{
   margin-top:unset;
 }
 
+input[type="text"],input[type="number"], input[type="password"], input[type="email"], label[for="submit"], textarea{
+  background-color: transparent;
+  border: 2px solid;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-family: inherit;
+  font-size: 1em;
+  color: var(--chiss);
+  min-height:34px;
+  text-align: center;
+}
+.add-story{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 600px;
+  width: 500px;
+  justify-content: space-around;
+  
+}
+.add-story textarea{
+  width: 500px;
+  height: 300px;
+  text-align: left;
+}
+.wordCounter{
+  font-size: 10px;
+  position: relative;
+  margin-top: -50px;
+  margin-left: 400px;
+}
 a:hover{
 	color:#ff4b4b;
 }
@@ -219,6 +251,78 @@ nav.a{
 }
 .wrapper h2{
 	font-size: 3rem;
+}
+.herarchyContainer{
+  background-image: url(img/herarchy-landscape-bg.png);
+  border: 2px solid;
+  margin-top: 50px;
+  border-radius: 5px;
+  height: 400px;
+  width: 900px;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.herarchyContainer img{
+  border:none;
+  max-height: 165px;
+  margin-top:0px;
+}
+.story, .story p{
+  color: goldenrod;
+}
+.stories{
+  margin-top:30px;
+}
+.stories h2{
+  color:var(--title-scar);
+}
+.add-story input#submit{
+    height: 60px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 2px solid #33e233;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #33e233;
+    transition: color 200ms ease, background-color 200ms ease;
+}
+.add-story input#submit:hover{
+  background-color: #33e233;
+  color:rgba(0,0,0,0.75);
+  cursor: pointer;
+}
+.textImg{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.textImg .txtWrapper{
+  width:50%;
+}
+.textImg figure{
+  max-width:300px;
+}
+
+figcaption{
+  text-align: center;
+  width: 100%;
+  display: block;
+  padding-top: 10px;
+  font-weight: 600;
+}
+
+main ul, main ol{
+  margin-right: auto;
+  margin-left: 60px;
+  margin-bottom: 30px;
+  list-style-type: disc;
 }
 .submenue-skills .sub-menu {
     border-radius: 5px;

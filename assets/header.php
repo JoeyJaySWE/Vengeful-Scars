@@ -22,14 +22,16 @@
 
         <nav class="wrapper">
             <li><a href="index.php"><img class="anchor" src="/img/blue-text.png"/></a></li>
-            <li><a href="">Home</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Story</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="about.php">About</a></li>
+            <li><a href="story.php">Story</a></li>
             <li><a href="">Join</a></li>
             <li><a href="">Crew</a></li>
         </nav>
         <main class="wrapper">
-        <img class="topImg" src="<?php echo $topImgSrc;?>" alt="<?php $topImgAlt;?>">
+            <figure>
+                <img class="topImg" src="<?php echo $topImgSrc;?>" alt="<?php $topImgAlt;?>">
+            </figure>
 
 
 
