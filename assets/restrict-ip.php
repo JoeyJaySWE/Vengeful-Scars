@@ -16,7 +16,7 @@
 }  
 $ip = getIPAddress();  
 
-if (/*$ip != "83.185.86.65"*/ $ip != "92.33.158.58") {
+if (/*$ip != "83.185.86.65"*/ $ip != "92.33.159.111") {
  
    
     header('Location: under-construction.html');

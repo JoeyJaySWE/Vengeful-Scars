@@ -79,12 +79,16 @@ table {
 
 
 /* ---------------------------------------------------- */
-::root{
-  font-size: 16px;
+html body{
+  font-size: 1.1vw;
+  --scar: #ff4b4b;
+  --chiss:#00c7f8;
 }
 p{
 	margin-top:30px;
-	margin-bottom:30px;
+  margin-bottom:30px;
+  font-size: 1rem;
+  line-height:1.5rem;
 }
 *{
   box-sizing: border-box;
@@ -127,10 +131,16 @@ h6{
 strong{
   font-weight: bold;
 }
-.paper div{
+.wrapper div{
 	font-size: 1rem;
 	line-height: normal;
 	width:100%;
+}
+
+img.anchor{
+  max-width:100px;
+  border:none;
+  margin-top:unset;
 }
 
 a:hover{
@@ -147,6 +157,12 @@ em{
 	font-style: italic!important;
 	padding-right:5px;
 }
+.subtitle {
+  display: block;
+  text-align: center;
+  color: var(--scar);
+  font-size: 1.4rem;
+}
 div{
   font-family: "Titillium Web", sans-serif;
   font-size: 1em;
@@ -162,18 +178,19 @@ div{
     flex-wrap: wrap;
     justify-content: center;
 }
-nav.paper {
+nav.wrapper {
     list-style-type: none;
     display: flex;
     justify-content: space-around;
-    padding-top: 20px;
+    padding: 0px;
 		position: fixed;
-		margin-top:0px;
+    margin-top:0px;
+    align-items: center;
 }
 nav.a{
 	text-decoration: none;
 }
-.paper {
+.wrapper {
     background-color: rgba(0,0,0,0.75);
     border-color: #1c3bca;
     border: 5px solid;
@@ -187,14 +204,20 @@ nav.a{
     max-width: 1008px;
 		color:#00c7f8;
 		margin-top:186px;
-		padding:20px;
+    padding: 20px 70px 20px 70px;
 }
-.paper h1{
+.topImg{
+  margin-top:20px;
+  max-width: unset;
+  max-height: unset;
+}
+.wrapper h1{
  font-size: 5em;
  width: 100%;
  text-align: center;
+ margin-top:30px;
 }
-.paper h2{
+.wrapper h2{
 	font-size: 3rem;
 }
 .submenue-skills .sub-menu {
@@ -251,7 +274,7 @@ img#ranged, img#armor{
 	img{
 		max-width:400px;
 	}
-	.paper{
+	.wrapper{
 		margin-top:150px;
 	}
 }
