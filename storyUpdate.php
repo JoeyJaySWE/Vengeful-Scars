@@ -12,22 +12,22 @@
         $story = $_POST['storyTxt'];
         $img = $_POST['storyImg'];
         $cap = $_POST['storyCap'];
-        $date = date('d-m-y');
+        $date = date('dmy');
 
         // Prepare Secure DB entries
         $sqlNewStory = "INSERT INTO `Stories`(`title`, `story`, `url`, `captation`, `date`) VALUES ('".$title."', '".$story."', '".$img."', '".$cap."', '".$date."');";
         $newStoryResult = mysqli_query($mysqli, $sqlNewStory);
 
         if(!$newStoryResult){
-            
-            $_SESSION["message"] = "New sheet successfully created!";
-            header("Location: story.php");
+            $_SESSION["message"] = "Error: <br>" . $mysqli->error;
+            echo $_SESSION['message'];
+           
             
                       
         }
         else{
-            $_SESSION["message"] = "Error: <br>" . $mysqli->error;
-            echo $_SESSION['message'];
+            $_SESSION["message"] = "New sheet successfully created!";
+            header("Location: story.php");
         }
 
         
