@@ -1,7 +1,11 @@
 <?php
 
     $title = "Story";
-    $metaImg = "favicon.png";
+    $metaTitle = "The Chronicles";
+    $metaDesc = "Gather 'round lubbers, and let me tell you the tales of our past glories!";
+    $metaImg = "http://vengefulscars.com/img/blue-text-card.png";
+    $metaCard = "summary";
+    $metaCardAlt = "The words Vengeful and Scars written in glowing blue, seperated by 3 bloddy scars";
     $favicon = "img/favicon.png";
     $topImgSrc = "http://via.placeholder.com/900x400";
     $topImgAlt = "tmp placeholder";

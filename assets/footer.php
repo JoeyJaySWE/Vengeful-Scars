@@ -56,9 +56,12 @@
             if(newHeight < 325){
                 console.log("test value: "+newHeight);
             $(".textImg figure:eq("+i+") img").css("max-height", newHeight+"px");
-            let newWidth = $(".textImg figure:eq("+i+") img").width();
-            console.log("new width: "+newWidth);
-            $(".textImg figure:eq("+i+")").css("max-width", newWidth+"px");
+            $(document).ready(function(){
+                let newWidth = $(".textImg figure:eq("+i+") img").width();
+                console.log("new width: "+newWidth);
+                $(".textImg figure:eq("+i+")").css("max-width", newWidth+"px");
+
+            })
 
             }
          

@@ -1,8 +1,12 @@
 <?php
 
     $title = "Vengeful Scars";
-    $metaImg = "favicon.png";
-    $favicon = "img/favicon.png";
+    $metaTitle = "The Vengeful Scars";
+    $metaDesc = "Wanna live the care free life of a pirate crew... in space?!";
+    $metaImg = "http://vengefulscars.com/img/blue-text-card.png";
+    $metaCard = "summary";
+    $metaCardAlt = "The words Vengeful and Scars written in glowing blue, seperated by 3 bloddy scars";
+    $favicon = "http://vengefulscars.com/favicon.png";
     $topImgSrc = "http://via.placeholder.com/900x400";
     $topImgAlt = "tmp placeholder";
 

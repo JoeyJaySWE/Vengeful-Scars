@@ -1,7 +1,11 @@
 <?php
 
     $title = "About";
-    $metaImg = "favicon.png";
+    $metaTitle = "Who do we think we are?";
+    $metaDesc = "You have no idea who are do you? Well, let Jace here lay down the ropes...";
+    $metaImg = "http://vengefulscars.com/img/blue-text-card.png";
+    $metaCard = "summary";
+    $metaCardAlt = "The words Vengeful and Scars written in glowing blue, seperated by 3 bloddy scars";
     $favicon = "img/favicon.png";
 
 
