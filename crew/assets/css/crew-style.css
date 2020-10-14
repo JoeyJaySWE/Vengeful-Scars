@@ -39,8 +39,7 @@ body {
   background-repeat: no-repeat;
 }
 ol, ul {
-  list-style: none;
-  margin-top:30px;
+	list-style: none;
 }
 blockquote, q {
 	quotes: none;
@@ -92,6 +91,7 @@ html body{
 }
 p{
 	margin-top:30px;
+  margin-bottom:30px;
   font-size: 1rem;
   line-height:1.5rem;
 }
@@ -223,8 +223,8 @@ div{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-image: url(img/Flag_logo_free_15o.svg);
-    /* background-image: url(img/web_flag_skull_greyscale.png); */
+    background-image: url(img/Flag_logo_free.svg);
+    background-image: url(img/web_flag_skull_greyscale.png);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
@@ -256,7 +256,7 @@ nav a{
     max-width: 1008px;
 		color:#00c7f8;
 		margin-top:186px;
-    padding: 20px 70px 40px 70px;
+    padding: 20px 70px 20px 70px;
 }
 .topImg{
   margin-top:20px;
@@ -283,23 +283,6 @@ nav a{
   max-height: 165px;
   margin-top:0px;
 }
-.sign{
-  border-bottom:2px solid var(--chiss);
-  width:480px;
-}
-.sign img{
-  opacity: 0.0;
-  border:none;
-}
-a.mail{
-  color:var(--scar);
-  
-}
-.sign img:hover{
-  opacity:1;
-  cursor:text;
-}
-
 .story, .story p{
   color: goldenrod;
 }
@@ -351,45 +334,8 @@ main ul, main ol{
   margin-right: auto;
   margin-left: 60px;
   margin-bottom: 30px;
-
-}
-main ul{
   list-style-type: disc;
 }
-h2.join{
-  margin-top:40px;
-}
-h2.join + div + strong + p{
-  margin-top:20px;
-}
-article.rules {
-  border: 3px solid;
-  padding: 60px 20px 20px 20px;
-  border-radius: 10px;
-  margin-top: 30px;
-  background-color: rgb(0 67 255 / 10%);
-}
-
-article.rules h3, article.rules .subtitle{
-  text-align: center;
-  width: 100%;
-}
-article.rules ol{
-  list-style-type: upper-roman;
-}
-main ol li, main ul li{
-  margin-top: 20px;
-  padding-left: 10px;
-  line-height: 20px;
-}
-article.rules ol ul li{
-  color:var(--title-scar);
-  margin-top:10px;
-}
-article.rules ol ul li strong{
-  color:goldenrod;
-}
-
 .submenue-skills .sub-menu {
     border-radius: 5px;
     display: none;
@@ -440,7 +386,14 @@ img#ranged, img#armor{
 	margin-bottom:20px;
 	margin-top: 40px;
 }
-
+.admin-nav{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  list-style-type: none;
+  width: 100%;
+  margin-top:30px;
+}
 @media screen and (max-width:600px){
 	img{
 		max-width:400px;

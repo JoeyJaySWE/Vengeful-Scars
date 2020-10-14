@@ -8,17 +8,17 @@
         $_SESSION['message'] = "Couldn't conect to db!";
         }
 
-        $title = $_POST['storyTitle'];
-        $story = $_POST['storyTxt'];
-        $img = $_POST['storyImg'];
-        $cap = $_POST['storyCap'];
+        $title = $_POST['newsTitle'];
+        $news = $_POST['newsTxt'];
+        $img = $_POST['newsImg'];
+        $cap = $_POST['newsCap'];
         $date = date('ymd');
 
         // Prepare Secure DB entries
-        $sqlNewStory = "INSERT INTO `Stories`(`title`, `story`, `url`, `captation`, `date`) VALUES ('".$title."', '".$story."', '".$img."', '".$cap."', '".$date."');";
-        $newStoryResult = mysqli_query($mysqli, $sqlNewStory);
+        $sqlNewNews = "INSERT INTO `News`(`title`, `news`, `url`, `caption`, `date`) VALUES ('".$title."', '".$news."', '".$img."', '".$cap."', '".$date."');";
+        $newNewsResult = mysqli_query($mysqli, $sqlNewNews);
 
-        if(!$newStoryResult){
+        if(!$newNewsResult){
             $_SESSION["message"] = "Error: <br>" . $mysqli->error;
             echo $_SESSION['message'];
            
@@ -27,7 +27,7 @@
         }
         else{
             $_SESSION["message"] = "New sheet successfully created!";
-            header("Location: story.php");
+            header("Location: index.php");
         }
 
         

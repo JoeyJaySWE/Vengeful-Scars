@@ -21,6 +21,7 @@
 
 <?php
 session_start();
+
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
   // $_SESSION['message'] = '';
   // var_dump($_POST['password']);
@@ -30,6 +31,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   $pass = $_POST['password'];
   $passs = $pass."sqrd";
   $pass = md5($passs);
+
+
+
 
   $mysqli =  mysqli_connect('my142b.sqlserver.se', '207231_im12896', 'VengefulScarsDb', '207231-vengeful-sheet');
   if(mysqli_connect_errno()){
@@ -43,9 +47,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $_SESSION['user'] = $user;
     $_SESSION['message'] = "Welcome ".$_SESSION['user']."!";
     $_SESSION['id'] = $row['USERiD'];
+    $_SESSION['admin'] = $row['ADMIN'];
 
-
-      header("Location: index.php");
+      if($_SESSION['admin'] == 0){
+        header("Location: http://crew.vengefulscars.com/sheet-broswer.php");
+      }
+      header('Location: http://vengefulscars.com/');
   }
   else{
     $_SESSION['message'] = "Couldn't find username or password. Try again. ";
@@ -57,7 +64,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 }
 
 
+if($_SESSION['admin'] != null){
+  
+  if($_SESSION['admin'] == 0){
+    header("Location: http://vengefulscars.com/crew/sheet/sheet-broswer.php");
+  }
+  header('Location: http://vengefulscars.com/crew/index.php');
 
+}
 
 
 
@@ -66,12 +80,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       <div id="sign-in" style="display:flex;height:330px;">
         <h1>Sign-in to your sheet</h1>
 
-        <form action="admin.php" method="POST">
+        <form action="crew.php" method="POST">
           <input type="text" id="username" name="username" class="border" placeholder="Username"/>
           <input type="password" id="password" name="password" class="border" placeholder="Password"/></br>
           <input type="submit" id="submitBtn" value="Sign in!" />
         </form>
-        <a href="sheet-reg.php">Sign up!</a>
         <br />
         <span><?php if($_SERVER['REQUEST_METHOD'] == 'POST'){echo $_SESSION['message'];}?></span>
       </div>

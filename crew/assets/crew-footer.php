@@ -27,14 +27,6 @@
 
             <?php
         }
-        else if($title === "Join us!"){
-            ?>
-
-            $("nav li:nth-child(5)").css({'font-weight' : 'bold',
-                                        'border-bottom' : '2px solid'});
-
-            <?php
-        }
 
     ?>
 </script>

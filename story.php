@@ -10,8 +10,7 @@
     $topImgSrc = "http://via.placeholder.com/900x400";
     $topImgAlt = "tmp placeholder";
 
-    require __DIR__ . "/assets/header.php";
-    // require __DIR__ . "/assets/restrict-ip.php";
+
   
     session_start();
  
@@ -20,7 +19,14 @@
     if(mysqli_connect_errno()){
     $_SESSION['message'] = "Couldn't conect to db!";
     }
+
+    require __DIR__ . "/assets/header.php";
+    // require __DIR__ . "/assets/restrict-ip.php";
+
+
     ?>
+
+
     <h1>Vengeful Scars Chronicles</h1>
     <?php
     $sql = "SELECT * FROM Stories";
@@ -49,7 +55,7 @@
             <em class="story">
             <p><?php echo $storyTxt;?></p>
             
-                <? if($storyUrl != ""){
+                <?php if($storyUrl != ""){
                     ?>          <figure>
                                     <img src="<?php echo $storyUrl;?>" alt=""/>
                                     <figcaption></figcaption>
@@ -67,7 +73,7 @@
         }
     }
     
-        if(isset($_SESSION['user'])){
+        if($_SESSION['admin'] === 1){
            
             ?>
             <div class="break"></div>
@@ -78,19 +84,6 @@
                 <input type="text" id="storyCap" name="storyCap" placeholder="Imge Captiation"/>
                 <input type="submit" id="submit" name="submit" value="Include story!" />
             </form>
-            <!-- word counter -->
-            <script>
-                
-                function countChar(val) {
-                    var len = val.value.length;
-                    if (len >= 10000) {
-                    val.value = val.value.substring(0, 10000);
-                    } else {
-                    $('.wordCounter').text(10000 - len+" / 10,000");
-                    }
-                };
-
-            </script>
     
             <?php
         }

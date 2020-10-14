@@ -16,7 +16,7 @@
     <meta name="twitter:card" content="<?php echo $metaCard;?>"/>
     <meta name="twitter:image:alt" content="<?php echo $metImgAlt;?>">
     <meta propety="og:url" content="http://vengefulscars.joeyjaydigital.com/img/"/>
-    <link rel="stylesheet" href="site-style.css">
+    <link rel="stylesheet" href="/crew/assets/css/crew-style.css">
     <link rel='icon' type='image/png' href='<?php echo $favicon;?>'>
     <script src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=' crossorigin='anonymous'></script>
     <title><?php echo $title; ?></title>
@@ -30,7 +30,7 @@
             <li><a href="index.php">Home</a></li>
             <li><a href="about.php">About</a></li>
             <li><a href="story.php">Story</a></li>
-            <li><a href="join.php">Join</a></li>
+            <li><a href="">Join</a></li>
             <li><a href="crew.php">Crew</a></li>
             <?php 
             if(isset($_SESSION['user'])){
