@@ -48,38 +48,7 @@
     });
     
 </script>
-<!-- scale image in acordance with text mass -->
-<script>
 
-    let amount = $(".textImg p").length;
-
-    console.log("There are "+ amount +" elemnts on this page.");
-    $(document).ready(function(){
-
-        --amount;
-        for(let i=0;i<amount; i++){
-            
-            let newHeight = $(".textImg .txtWrapper:eq("+i+")").innerHeight();
-            newHeight -= 124;
-            if(newHeight < 325){
-                console.log("test value: "+newHeight);
-            $(".textImg figure:eq("+i+") img").css("max-height", newHeight+"px");
-            $(document).ready(function(){
-                let newWidth = $(".textImg figure:eq("+i+") img").width();
-                console.log("new width: "+newWidth);
-                $(".textImg figure:eq("+i+")").css("max-width", newWidth+"px");
-
-            })
-
-            }
-         
-
-
-        }
-
-    })
-
-</script>
  <!-- smooth scroll (local) -->
 <script>
       $(document).ready(function(){

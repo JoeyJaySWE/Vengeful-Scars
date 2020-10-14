@@ -100,8 +100,8 @@
     <p>In short: We're all in this together, so have fun but keep it a respectable and nice experience for all! Be your character and stay true to the universe. For answer on any further questions (without using discord) send a mail to
         <a class="mail" href="mailto:jessijay@vengfulscars.com?subject=Question%20about%20Joining">jessijay@vengfulscars.com</a>. Now we just need you to sign on the line bellow, and welcome onboard!</p>
     <span style="margin-top:20px;font-size:1.9rem;">"I hearby swear my loyality to Captain Zalanin Naraz and his crew, and to head by the codes listed above!"</span><div class="break"></div>
-    <a href="" class="sign"><img src="img/sign.png"></a><div class="break"></div>
-    <div style="height:3px;width:480px;margin:auto;background-color:#00c7f8;border-radius:10px;margin-bottom:30px;">
+    <a href="https://discord.gg/AGvZTk9" class="sign"><img src="img/sign.png" alt="*signature*"></a><div class="break"></div>
+    <div class="signLine">
 <?php
     
 require __DIR__ . "/assets/footer.php";
