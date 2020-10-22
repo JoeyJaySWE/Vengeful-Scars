@@ -2,7 +2,7 @@
 
     $title = "Vengeful Scars";
     $metaTitle = "The Vengeful Scars";
-    $metaDesc = "Wanna live the care free life of a pirate crew... in space?!";
+    $metaDesc = "Wanna live the care free life of a pirate crew... in space?! Join our Pirate RP guild in SWTOR on Malgus Server!";
     $metaImg = "http://vengefulscars.com/img/blue-text-card.png";
     $metaCard = "summary";
     $metaCardAlt = "The words Vengeful and Scars written in glowing blue, seperated by 3 bloddy scars";

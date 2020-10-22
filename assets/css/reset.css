@@ -1,0 +1,82 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video,a:-webkit-any-link {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: unset;
+	font: inherit;
+	vertical-align: baseline;
+	text-decoration: none;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: flex;
+	    flex-wrap: wrap;
+	    box-sizing: border-box;
+	    width: auto;
+	}
+body {
+  line-height: normal;
+  background-image: radial-gradient(circle at center,#333333,#101010);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+ol, ul {
+  list-style: none;
+  margin-top:30px;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+@font-face {
+  font-family: 'Moonhouse';
+  src: url('http://vengefulscars.joeyjaydigital.com/fonts/moonhouse.eot'), /* IE9 Compat Modes */
+   		 url('http://vengefulscars.joeyjaydigital.com/fonts/moonhouse.woff2') format('woff2'), /* Super Modern Browsers */
+       url('http://vengefulscars.joeyjaydigital.com/fonts/moonhouse.woff') format('woff'), /* Pretty Modern Browsers */
+       url('http://vengefulscars.joeyjaydigital.com/fonts/moonhouse.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+::-moz-placeholder{
+	color: lightgrey;
+	opacity:0.2;
+}
+::-webkit-input-placeholder{
+	color: lightgrey;
+	opacity:0.2;
+}
+:-ms-input-placeholder{
+	color: lightgrey;
+	opacity:0.2;
+}
+:-moz-placeholder{
+  color: lightgrey;
+	opacity:0.2;
+}

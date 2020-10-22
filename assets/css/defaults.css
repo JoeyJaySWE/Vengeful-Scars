@@ -1,0 +1,133 @@
+html body{
+    font-size: 1.1vw;
+    --scar: #ff4b4b;
+    --chiss:#00c7f8;
+    --title-scar: #d60f0f;
+    margin: 0px;
+  }
+  p{
+      margin-top:30px;
+    font-size: 1rem;
+    line-height:1.5rem;
+  }
+  *{
+    box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      color:#00c7f8;
+  }
+  img {
+    display: block;
+    max-width: 480px;
+    max-height: 325px;
+    border: 4px solid;
+    border-radius: 5px;
+    margin-top: 30px;
+  }
+  button{
+      border-color:lightgrey;
+      color:black;
+  }
+  input, textarea, select{
+        color: #00c7f8;
+  }
+  textarea{
+    resize:none;
+      width:100%;
+  }
+  h1, h2, h3, h4, h5{
+    font-family: "Moonhouse", "Titillium Web", sans-serif;
+  }
+  h1{
+    font-size: 5em;
+    width: 100%;
+    text-align: center;
+    margin-top:30px;
+   }
+  h2{
+      font-size: 3rem;
+  }
+  h3{
+    font-size:2rem;
+  }
+  h4{
+    font-size:1.5rem;
+  }
+  h5{
+    font-size:1.25rem;
+  }
+  h6{
+    font-size:1rem;
+    font-weight: bold;
+  }
+  h2+p, h2+em>p, h2+strong>p{
+    margin-top:15px;
+  }
+  strong{
+    font-weight: bold;
+  }
+  a:hover{
+	color:#ff4b4b;
+}
+a:hover strong:hover,  a:hover em:hover{
+	color:#00c7f8;
+
+}
+a strong, a em{
+		border-bottom: 2px solid;
+}
+em{
+	font-style: italic!important;
+	padding-right:5px;
+}
+input[type="text"],input[type="number"], input[type="password"], input[type="email"], label[for="submit"], textarea{
+    background-color: transparent;
+    border: 2px solid;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-family: inherit;
+    font-size: 1em;
+    color: var(--chiss);
+    min-height:34px;
+    text-align: center;
+}
+div{
+    font-family: "Titillium Web", sans-serif;
+    font-size: 1em;
+    /* color:#00c7f8; */
+}
+nav a{
+	text-decoration: none;
+}
+
+figcaption{
+    text-align: center;
+    width: 100%;
+    display: block;
+    padding-top: 10px;
+    font-weight: 600;
+  }
+  main ul, main ol{
+    margin-right: auto;
+    margin-left: 60px;
+    margin-bottom: 30px;
+  
+  }
+  main ul{
+    list-style-type: disc;
+  }
+  main ol li, main ul li{
+    margin-top: 20px;
+    padding-left: 10px;
+    line-height: 20px;
+  }
+  @media screen and (min-width:1200px){
+
+    html body{
+        font-size:1.2vw;
+    }
+    h1{
+        font-size: 1.3rem;
+    }
+
+  }

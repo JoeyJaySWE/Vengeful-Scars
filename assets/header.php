@@ -16,6 +16,9 @@
     <meta name="twitter:card" content="<?php echo $metaCard;?>"/>
     <meta name="twitter:image:alt" content="<?php echo $metImgAlt;?>">
     <meta propety="og:url" content="http://vengefulscars.joeyjaydigital.com/img/"/>
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/defaults.css">
+    <link rel="stylesheet" href="/assets/css/globals.css">
     <link rel="stylesheet" href="site-style.css">
     <link rel='icon' type='image/png' href='<?php echo $favicon;?>'>
     <script src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=' crossorigin='anonymous'></script>

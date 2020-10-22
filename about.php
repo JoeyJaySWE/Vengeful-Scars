@@ -52,7 +52,7 @@
                     and kill people to get their booty, but that's just our version of going trick or treating.
                 </p>
             </div>
-            <figure>
+            <figure id="sawbones">
                 <img src="img/Jessi-Profile.png" alt="Jessi Jay" /><div class="break"></div>
                 <figcaption>Jessi Jay - Sawbone & First Mate</figcaption>
             </figure>
