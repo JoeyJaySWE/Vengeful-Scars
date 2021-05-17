@@ -1,3 +1,9 @@
+
+<div float="left">
+  <img src="/img/blue-text-glow.png" width=460 style="max-width:50%!important" alt="Vengeful Scars - Logo">
+  <img src="/img/Flag_logo_free_15o.svg" width=460 alt="vengeful-skull">
+</div>
+
 # Vengeful Scars
 
 A community Site I started working on during the Autumn of 2020.
